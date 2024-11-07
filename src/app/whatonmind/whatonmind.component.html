@@ -1,0 +1,42 @@
+<div class="container px-6 py-4">
+    <div class="flex items-center justify-between mx-32">
+        <h2 class="text-lg font-semibold">What's on your mind?</h2>
+        <div class="flex items-center space-x-4">
+        
+            <button (click)="scrollLeft()" class="text-gray-500 hover:text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            
+            <button (click)="scrollRight()" class="text-gray-500 hover:text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+
+    <div class="overflow-hidden mx-32"> 
+        <div id="carousel" class="flex space-x-4 transition-transform duration-300">
+            <img class="w-52 h-52"  src="assets/Biryani.avif" alt="Biryani"  (click)="goToDefault()">
+            <img class="w-52 h-52" src="assets/southindia.avif" alt="South Indian">
+            <img class="w-52 h-52" src="assets/burger.avif" alt="Burger">
+            <img class="w-52 h-52" src="assets/cake.avif" alt="Cake">
+            <img class="w-52 h-52" src="assets/Chinese.avif" alt="Chinese">
+            <img class="w-52 h-52" src="assets/Dosa.avif" alt="Dosa">
+            <img class="w-52 h-52" src="assets/Ice.avif" alt="Ice Cream">
+            <img class="w-52 h-52" src="assets/Kebabs.avif" alt="Kebabs">
+            <img class="w-52 h-52" src="assets/NorthIndian.avif" alt="North Indian">
+            <img class="w-52 h-52" src="assets/Paratha.avif" alt="Paratha">
+            <img class="w-52 h-52" src="assets/Pizzas.avif" alt="Pizzas">
+            <img class="w-52 h-52" src="assets/Pure_Veg.avif" alt="Pure Veg">
+            <img class="w-52 h-52" src="assets/Rasmalai.avif" alt="Rasmalai">
+            <img class="w-52 h-52" src="assets/Rolls1.avif" alt="Rolls">
+            <img class="w-52 h-52" src="assets/Salad.avif" alt="Salad">
+            <img class="w-52 h-52" src="assets/Shake.avif" alt="Shake">
+            <img class="w-52 h-52" src="assets/shawarma.avif" alt="Shawarma">
+        </div>
+    </div>
+</div>

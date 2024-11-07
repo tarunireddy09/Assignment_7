@@ -1,0 +1,82 @@
+<app-navbar></app-navbar>
+
+
+<div class="container mx-auto px-10 lg:px-72 my-12">
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+        <div class="mb-4">
+            <h1 class="text-2xl font-bold text-gray-800 mb-2">Kritunga Restaurant</h1>
+            <div class="flex space-x-4">
+                <button class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full font-semibold">Order Online</button>
+                <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 px-6 py-2 rounded-full font-semibold">Dineout</button>
+            </div>
+        </div>
+
+        <div class="p-5 rounded-xl border shadow-sm border-gray-200 bg-gray-50">
+            <div class="flex items-center mb-2">
+                <div class="bg-green-100 p-2 rounded-md mr-4">
+                    <span class="text-sm font-semibold text-green-600">4.4 (243K+ ratings)</span>
+                </div>
+                <span class="text-sm text-gray-700">₹400 for two</span>
+            </div>
+
+            <p class="text-sm font-semibold text-orange-500 underline">Biryani, Chinese</p>
+            
+            <div class="mt-2 flex items-center gap-2">
+                <h3 class="text-sm font-semibold text-gray-800">Outlet:</h3>
+                <p class="text-sm text-gray-500">Panjagutta</p>
+            </div>
+            <p class="text-xs text-gray-500">30-35 mins</p>
+        </div>
+
+        <div class="mt-6">
+            <h2 class="text-lg font-bold text-gray-800">Deals for You</h2>
+            <div class="flex flex-col md:flex-row gap-4 mt-3">
+                <div class="flex-1 p-3 rounded-lg border items-center text-center bg-orange-100">
+                    <p class="text-sm font-semibold text-gray-800">Extra ₹25 Off</p>
+                    <p class="text-xs text-gray-600">APPLICABLE OVER & ABOVE COUPONS</p>
+                </div>
+                <div class="flex-1 p-3 rounded-lg border items-center text-center bg-orange-100">
+                    <p class="text-sm font-semibold text-gray-800">Flat ₹75 Off</p>
+                    <p class="text-xs text-gray-600">USE RBLCC75</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Recommended Section -->
+<div class="container mx-auto px-10 lg:px-72 mb-12">
+    <h2 class="text-lg font-bold text-gray-800 mb-4">Recommended ({{ items.length }})</h2>
+    <div class="bg-white p-6 rounded-lg border border-gray-200">
+        <div *ngFor="let item of items" class="flex justify-between items-center border-b border-gray-200 py-4">
+            <div>
+                <div class="flex items-center mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-red-500 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75M9 20.25V9m3 11.25V9m3 11.25V9m-9 11.25v-11.25m9 11.25v-11.25M9 9m3 3H9m3 0h3M9 9h3m-3 3h3" />
+                    </svg>
+                    <p class="text-sm font-semibold text-orange-500">Bestseller</p>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800">{{ item.name }}</h3>
+                <p class="text-sm text-gray-600">₹{{ item.price }}</p>
+                <p class="text-xs text-gray-500">★4.3 (61495)</p>
+                <p class="text-xs text-gray-500">Serves 1 Person</p>
+                <p class="text-xs text-gray-500 mt-2">Customisable</p>
+            </div>
+            <div class="relative">
+                <img [src]="item.imageUrl" alt="{{ item.name }}" class="w-24 h-24 object-cover rounded-lg shadow-md">
+                <div class="flex justify-center space-x-2">
+                  <button (click)="addItemToCart(item)" class="bg-green-500 text-white px-3 py-1 rounded-md text-xs font-semibold hover:bg-green-600">
+                      ADD
+                  </button>
+                  <button *ngIf="!favoritesService.isFavorite(item)" (click)="addItemToFavorites(item)" class="bg-yellow-500 text-white px-3 py-1 rounded-md text-xs font-semibold hover:bg-yellow-600">
+                      Add to Favorites
+                  </button>
+                  <button *ngIf="favoritesService.isFavorite(item)" class="bg-yellow-300 text-white px-3 py-1 rounded-md text-xs font-semibold">
+                      Added to Favorites
+                  </button>
+              </div>
+              
+            </div>
+        </div>
+    </div>
+</div>
